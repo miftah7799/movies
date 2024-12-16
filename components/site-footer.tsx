@@ -37,12 +37,12 @@ export const SiteFooter: React.FC<ComponentProps<"footer">> = () => {
               <p>
                 &copy; {year}{" "}
                 <a
-                  href={siteConfig.author.web}
+                  href="roisfaozi.com"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-foreground"
                 >
-                  {siteConfig.author.name}
+                  raven Studio
                 </a>{" "}
                 &mdash; All rights reserved.
               </p>
