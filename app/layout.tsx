@@ -12,7 +12,6 @@ import { GridBg } from "@/components/grid-bg"
 import { ScrollTop } from "@/components/scroll-top"
 import { SiteFooter } from "@/components/site-footer"
 import { SiteHeader } from "@/components/site-header"
-import { TailwindIndicator } from "@/components/tailwind-indicator"
 import { ThemeProvider } from "@/components/theme-provider"
 
 export const metadata: Metadata = {
@@ -53,7 +52,6 @@ export default function RootLayout({ children }: RootLayoutProps) {
             <div className="relative flex-1 py-4">{children}</div>
             <SiteFooter />
           </div>
-          <TailwindIndicator />
           <ScrollTop />
         </ThemeProvider>
         <GoogleAnalytics gaId={process.env.GA_ID!} />

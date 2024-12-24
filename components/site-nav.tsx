@@ -15,13 +15,12 @@ import {
   NavigationMenuTrigger,
   navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu"
-import { Icons } from "@/components/icons"
 
 const SiteNav = () => {
   return (
     <div className="flex items-center">
-      <Link href="/">
-        <Icons.Logo className="size-6" />
+      <Link href="/" className="text-2xl font-bold text-white">
+        PopFlix
       </Link>
 
       <NavigationMenu className="ml-4 hidden lg:flex">
