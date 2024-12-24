@@ -19,8 +19,11 @@ import {
 const SiteNav = () => {
   return (
     <div className="flex items-center">
-      <Link href="/" className="text-2xl font-bold text-white">
-        PopFlix
+      <Link
+        href="/"
+        className="rounded-lg bg-blue-400 p-1 text-2xl font-bold text-white"
+      >
+        King
       </Link>
 
       <NavigationMenu className="ml-4 hidden lg:flex">

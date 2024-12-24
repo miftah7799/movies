@@ -70,15 +70,19 @@
   * {
     @apply border-border;
   }
+
   body {
     @apply bg-background text-foreground;
   }
+
   .grid-list {
-    @apply grid gap-4 grid-cols-[repeat(auto-fill,minmax(8rem,1fr))] md:grid-cols-[repeat(auto-fill,minmax(12rem,1fr))] lg:grid-cols-[repeat(auto-fill,minmax(15rem,1fr))];
+    @apply grid gap-4 grid-cols-[repeat(auto-fill, minmax(8rem, 1fr))] md:grid-cols-[repeat(auto-fill, minmax(12rem, 1fr))] lg:grid-cols-[repeat(auto-fill, minmax(15rem, 1fr))];
   }
+
   .h-hero {
-    @apply h-[60vh] min-h-[560px];
+    @apply md:h-[60vh] md:min-h-[560px] min-h-[260px] h-[50vh];
   }
+
   .scrollbar-hidden {
     scrollbar-width: none;
     -ms-overflow-style: none;
@@ -93,6 +97,7 @@
   .overlay {
     @apply absolute inset-0 border rounded-md flex items-end bg-gradient-to-tr from-background/95;
   }
+
   .empty-box {
     @apply flex h-32 items-center justify-center rounded-lg border border-dashed text-muted-foreground;
   }

@@ -2,7 +2,6 @@ import { ComponentProps } from "react"
 import Link from "next/link"
 import { navigation } from "@/config"
 
-
 export const SiteFooter: React.FC<ComponentProps<"footer">> = () => {
   const year = new Date().getFullYear()
 
@@ -10,8 +9,11 @@ export const SiteFooter: React.FC<ComponentProps<"footer">> = () => {
     <footer className="relative mt-12 border-t bg-background">
       <div className="container flex flex-col lg:flex-row">
         <div className="px-2 py-8 pt-12 text-muted-foreground md:p-12">
-          <Link href="/" className="text-2xl font-bold text-white">
-            PopFlix
+          <Link
+            href="/"
+            className="rounded-lg bg-blue-400 p-1 text-2xl font-bold text-white"
+          >
+            King
           </Link>
         </div>
         <div className="flex-1 p-12 px-2 py-8 md:p-12">
