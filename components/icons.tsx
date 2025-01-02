@@ -1,7 +1,9 @@
-import { LucideProps, Popcorn } from "lucide-react"
+import { CircleUserRound, Loader2, LucideProps, Popcorn } from "lucide-react"
 
 export const Icons = {
+  Profile: CircleUserRound,
   Logo: Popcorn,
+  spinner: Loader2,
   Github: (props: LucideProps) => (
     <svg
       role="img"
