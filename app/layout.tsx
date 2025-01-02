@@ -2,13 +2,11 @@ import "@/styles/globals.css"
 import { Metadata } from "next"
 import { siteConfig } from "@/config"
 import { GoogleAnalytics } from "@next/third-parties/google"
-import { Analytics } from "@vercel/analytics/next"
 import { GeistSans } from "geist/font/sans"
 import HolyLoader from "holy-loader"
 
 import { cn } from "@/lib/utils"
 import { Toaster } from "@/components/ui/toaster"
-import { GridBg } from "@/components/grid-bg"
 import { ScrollTop } from "@/components/scroll-top"
 import { SiteFooter } from "@/components/site-footer"
 import { SiteHeader } from "@/components/site-header"
@@ -47,7 +45,6 @@ export default function RootLayout({ children }: RootLayoutProps) {
             className="relative flex min-h-screen flex-col bg-background"
             vaul-drawer-wrapper=""
           >
-            <GridBg />
             <SiteHeader />
             <div className="relative flex-1 py-4">{children}</div>
             <SiteFooter />
@@ -55,7 +52,6 @@ export default function RootLayout({ children }: RootLayoutProps) {
           <ScrollTop />
         </ThemeProvider>
         <GoogleAnalytics gaId={process.env.GA_ID!} />
-        <Analytics />
         <Toaster />
       </body>
     </html>
