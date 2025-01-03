@@ -2,9 +2,7 @@ import { Metadata } from "next"
 import Link from "next/link"
 import { tmdb } from "@/tmdb/api"
 
-import { MovieHero } from "@/components/movie-hero"
-import { TvHero } from "@/components/tv-hero"
-
+import { HeroCarousel } from "../../components/hero-carousel"
 import { MovieCard } from "../../components/movie-card"
 import { TvCard } from "../../components/tv-card"
 import { buttonVariants } from "../../components/ui/button"
@@ -28,7 +26,7 @@ export default async function Home() {
   return (
     <section>
       <div className="container space-y-8">
-        <MovieHero movies={movies} label="Trending Now" />
+        <HeroCarousel type="movie" items={movies} />
 
         <div className="flex flex-row justify-end">
           <Link
@@ -58,7 +56,7 @@ export default async function Home() {
             </div>
           </div>
         )}
-        <TvHero tvShows={tvShows.slice(10, 20)} label="Trending Now" />
+        <HeroCarousel type="tv" items={tvShows} />
         <div className="flex flex-row justify-end">
           <Link
             href={"/trending/tv"}

@@ -17,7 +17,7 @@ export const SiteFooter: React.FC<ComponentProps<"footer">> = () => {
           </Link>
         </div>
         <div className="flex-1 p-12 px-2 py-8 md:p-12">
-          <div className="mb-24 hidden md:flex">
+          <div className="mb-24 md:flex">
             {navigation.items.slice(1, navigation.items.length).map((item) => (
               <ul className="flex-1" key={item.title}>
                 <p className="mb-4 text-muted-foreground">{item.title}</p>
