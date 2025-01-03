@@ -77,7 +77,7 @@
     @apply grid gap-4 grid-cols-[repeat(auto-fill,minmax(8rem,1fr))] md:grid-cols-[repeat(auto-fill,minmax(12rem,1fr))] lg:grid-cols-[repeat(auto-fill,minmax(15rem,1fr))];
   }
   .h-hero {
-    @apply md:h-[50vh] md:min-h-[460px] min-h-[220px] h-[30vh];
+    @apply lg:h-[50vh] lg:min-h-[460px] md:h-[35vh] md:max-h-[350px] min-h-[220px] h-[30vh];
   }
   .scrollbar-hidden {
     scrollbar-width: none;
