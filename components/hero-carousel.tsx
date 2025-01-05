@@ -38,7 +38,7 @@ export const HeroCarousel: React.FC<TrendCarouselProps> = ({ items }) => {
   return (
     <div className="mx-auto w-full">
       <Carousel
-        opts={{ dragFree: true, loop: true }}
+        opts={{ loop: true, align: "center" }}
         plugins={[
           Autoplay({
             delay: 2000,
