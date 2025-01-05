@@ -2,8 +2,11 @@ import Link from "next/link"
 import { tmdb } from "@/tmdb/api"
 import { format } from "@/tmdb/utils"
 
-import { formatValue, joiner } from "@/lib/utils"
+import { cn, formatValue, joiner } from "@/lib/utils"
 import { MovieCollection } from "@/components/movie-collection"
+
+import { MovieCard } from "../../../../components/movie-card"
+import { buttonVariants } from "../../../../components/ui/button"
 
 interface DetailProps {
   params: {
@@ -23,6 +26,10 @@ export default async function Detail({ params }: DetailProps) {
     belongs_to_collection,
     original_title,
   } = await tmdb.movie.detail({
+    id: params.id,
+  })
+
+  const { results: recommends } = await tmdb.movie.recommendations({
     id: params.id,
   })
 
@@ -84,6 +91,38 @@ export default async function Detail({ params }: DetailProps) {
 
       {belongs_to_collection && (
         <MovieCollection id={belongs_to_collection.id} />
+      )}
+
+      <div className="flex flex-row justify-between">
+        <h1 className="line-clamp-2 text-xl font-medium leading-tight tracking-tighter md:text-2xl">
+          Recomendations
+        </h1>
+        <Link
+          href={"/trending/movie"}
+          className={cn(buttonVariants({ size: "sm", variant: "outline" }))}
+          prefetch={false}
+        >
+          Explore more
+        </Link>
+      </div>
+
+      {recommends.length ? (
+        <div className="grid-list">
+          {recommends.map((movie) => (
+            <MovieCard key={movie.id} {...movie} />
+          ))}
+        </div>
+      ) : (
+        <div className="container flex justify-center pb-[30dvh]">
+          <div className="text-center">
+            <h1 className="text-2xl">
+              No movies found for the selected filters.
+            </h1>
+            <p className="text-muted-foreground">
+              Try removing some of the filters to get more results.
+            </p>
+          </div>
+        </div>
       )}
     </section>
   )
