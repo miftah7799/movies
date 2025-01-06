@@ -33,6 +33,8 @@
     --ring: 240 10% 3.9%;
 
     --radius: 0.5rem;
+    --media-brand: 245 245 245;
+    --media-focus: 78 156 246;
   }
 
   .dark {
