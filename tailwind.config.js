@@ -26,6 +26,8 @@ module.exports = {
         poster: "2 / 3",
       },
       colors: {
+        "media-brand": "rgb(var(--media-brand) / <alpha-value>)",
+        "media-focus": "rgb(var(--media-focus) / <alpha-value>)",
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
@@ -81,5 +83,18 @@ module.exports = {
       },
     },
   },
-  plugins: [require("tailwindcss-animate")],
+  plugins: [
+    require("tailwindcss-animate"),
+    require("@vidstack/react/tailwind.cjs")({
+      prefix: "media",
+    }),
+    customVariants,
+  ],
+}
+
+function customVariants({ addVariant, matchVariant }) {
+  matchVariant("parent-data", (value) => `.parent[data-${value}] > &`)
+
+  addVariant("hocus", ["&:hover", "&:focus-visible"])
+  addVariant("group-hocus", [".group:hover &", ".group:focus-visible &"])
 }

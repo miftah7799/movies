@@ -1,4 +1,5 @@
 import "@/styles/globals.css"
+import "@vidstack/react/player/styles/base.css"
 import { Metadata } from "next"
 import { siteConfig } from "@/config"
 import { GoogleAnalytics } from "@next/third-parties/google"
