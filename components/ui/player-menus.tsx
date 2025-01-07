@@ -8,9 +8,9 @@ import { CheckCircle, CircleIcon, SubtitlesIcon } from "lucide-react"
 import { buttonClass, tooltipClass } from "./player-button"
 
 export interface MenuProps {
-  side?: DropdownMenu.MenuContentProps["side"]
-  align?: DropdownMenu.MenuContentProps["align"]
-  offset?: DropdownMenu.MenuContentProps["sideOffset"]
+  side?: DropdownMenu.DropdownMenuContentProps["side"]
+  align?: DropdownMenu.DropdownMenuContentProps["align"]
+  offset?: DropdownMenu.DropdownMenuContentProps["sideOffset"]
   tooltipSide?: Tooltip.TooltipContentProps["side"]
   tooltipAlign?: Tooltip.TooltipContentProps["align"]
   tooltipOffset?: number
@@ -80,7 +80,10 @@ export function Captions({
   )
 }
 
-function Radio({ children, ...props }: DropdownMenu.MenuRadioItemProps) {
+function Radio({
+  children,
+  ...props
+}: DropdownMenu.DropdownMenuRadioItemProps) {
   return (
     <DropdownMenu.RadioItem
       className="group relative flex w-full cursor-pointer select-none items-center justify-start rounded-sm p-2.5 text-sm outline-none ring-media-focus data-[focus]:ring hocus:bg-white/10"
