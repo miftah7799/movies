@@ -6,6 +6,7 @@ import { cn, formatValue, joiner, pad } from "@/lib/utils"
 import { Badge } from "@/components/ui/badge"
 import { buttonVariants } from "@/components/ui/button"
 import { MediaBackdrop } from "@/components/media-backdrop"
+import { TvCard } from "@/components/tv-card"
 
 export default async function Detail({ params }: { params: { id: string } }) {
   const {
@@ -22,6 +23,11 @@ export default async function Detail({ params }: { params: { id: string } }) {
     last_episode_to_air: lastEpisode,
   } = await tmdb.tv.detail({
     id: params.id,
+  })
+
+  const { results: recommends } = await tmdb.tv.recommendations({
+    id: params.id,
+    page: "1",
   })
 
   const items = [
@@ -131,6 +137,38 @@ export default async function Detail({ params }: { params: { id: string } }) {
                 View Episodes
               </Link>
             </div>
+          </div>
+        </div>
+      )}
+
+      <div className="flex flex-row justify-between">
+        <h1 className="line-clamp-2 text-xl font-medium leading-tight tracking-tighter md:text-2xl">
+          Recomendations
+        </h1>
+        <Link
+          href={"/trending/tv"}
+          className={cn(buttonVariants({ size: "sm", variant: "outline" }))}
+          prefetch={false}
+        >
+          Explore more
+        </Link>
+      </div>
+
+      {recommends.length ? (
+        <div className="grid-list">
+          {recommends.map((tv) => (
+            <TvCard key={tv.id} {...tv} />
+          ))}
+        </div>
+      ) : (
+        <div className="container flex justify-center pb-[30dvh]">
+          <div className="text-center">
+            <h1 className="text-2xl">
+              No movies found for the selected filters.
+            </h1>
+            <p className="text-muted-foreground">
+              Try removing some of the filters to get more results.
+            </p>
           </div>
         </div>
       )}

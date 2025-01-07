@@ -3,13 +3,14 @@ import { notFound } from "next/navigation"
 import { tmdb } from "@/tmdb/api"
 import { WithVideos } from "@/tmdb/api/types"
 import { format } from "@/tmdb/utils"
+import { Play } from "lucide-react"
 
+import { Button } from "@/components/ui/button"
 import { Tabs, TabsLink, TabsList } from "@/components/ui/tabs"
 import { MediaBackdrop } from "@/components/media-backdrop"
 import { MediaDetailView } from "@/components/media-detail-view"
 import { MediaPoster } from "@/components/media-poster"
 import { MediaRating } from "@/components/media-rating"
-import { MediaTrailerDialog } from "@/components/media-trailer-dialog"
 
 interface DetailLayoutProps {
   params: {
@@ -80,6 +81,12 @@ export default async function DetailLayout({
 
           <MediaDetailView.Title>{title}</MediaDetailView.Title>
 
+          <Button asChild>
+            <Link href="/loading">
+              <Play className="mr-2 size-4" /> Watch Now
+            </Link>
+          </Button>
+
           {tagline && (
             <MediaDetailView.Overview>
               &quot;{tagline}&quot;
@@ -89,8 +96,6 @@ export default async function DetailLayout({
           <MediaDetailView.Overview
             dangerouslySetInnerHTML={{ __html: format.content(overview) }}
           />
-
-          <MediaTrailerDialog videos={videos?.results} />
         </div>
       </MediaDetailView.Hero>
 
