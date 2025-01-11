@@ -13,6 +13,8 @@ import { MediaDetailView } from "@/components/media-detail-view"
 import { MediaPoster } from "@/components/media-poster"
 import { MediaRating } from "@/components/media-rating"
 
+import AdScript from "../../../../components/ad-scripts"
+
 interface DetailLayoutProps {
   params: {
     id: string
@@ -94,6 +96,7 @@ export default async function DetailLayout({
           />
         </div>
       </MediaDetailView.Hero>
+      <AdScript />
 
       <MediaDetailView.Content>
         <Tabs className="mt-8 lg:mt-12">

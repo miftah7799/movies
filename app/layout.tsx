@@ -13,6 +13,8 @@ import { SiteFooter } from "@/components/site-footer"
 import { SiteHeader } from "@/components/site-header"
 import { ThemeProvider } from "@/components/theme-provider"
 
+import AdScript from "../components/ad-scripts"
+
 export const metadata: Metadata = {
   title: {
     default: siteConfig.name,
@@ -48,6 +50,8 @@ export default function RootLayout({ children }: RootLayoutProps) {
           >
             <SiteHeader />
             <div className="relative flex-1 py-4">{children}</div>
+            <AdScript />
+
             <SiteFooter />
           </div>
           <ScrollTop />

