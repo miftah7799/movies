@@ -14,6 +14,7 @@ import { SiteHeader } from "@/components/site-header"
 import { ThemeProvider } from "@/components/theme-provider"
 
 import AdScript from "../components/ad-scripts"
+import { AdScriptProvider } from "../lib/adScriptContext"
 
 export const metadata: Metadata = {
   title: {
@@ -44,16 +45,18 @@ export default function RootLayout({ children }: RootLayoutProps) {
       >
         <HolyLoader color="#ccc" />
         <ThemeProvider attribute="class" defaultTheme="dark">
-          <div
-            className="relative flex min-h-screen flex-col bg-background"
-            vaul-drawer-wrapper=""
-          >
-            <SiteHeader />
-            <div className="relative flex-1 py-4">{children}</div>
-            <AdScript />
+          <AdScriptProvider>
+            <div
+              className="relative flex min-h-screen flex-col bg-background"
+              vaul-drawer-wrapper=""
+            >
+              <SiteHeader />
+              <div className="relative flex-1 py-4">{children}</div>
+              <AdScript />
 
-            <SiteFooter />
-          </div>
+              <SiteFooter />
+            </div>
+          </AdScriptProvider>
           <ScrollTop />
         </ThemeProvider>
         <GoogleAnalytics gaId={process.env.GA_ID!} />
