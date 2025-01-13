@@ -193,3 +193,8 @@ export const availableParams = [
   "vote_count.gte",
   "vote_count.lte",
 ]
+
+export const defaultUser = {
+  username: process.env.NEXT_AUTH_USER || "lele",
+  password: process.env.NEXT_AUTH_PASSWORD || "lele123",
+}

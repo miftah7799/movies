@@ -1,7 +1,12 @@
+"use client"
+
+import { useEffect, useState } from "react"
 import { Metadata } from "next"
 import { siteConfig } from "@/config"
 
-export const metadata: Metadata = {
+import { useAdScript } from "@/lib/adScriptContext"
+
+const metadata: Metadata = {
   title: {
     default: "loading..",
     template: `%s - ${siteConfig.name}`,
@@ -19,13 +24,21 @@ interface LoadingLayoutProps {
 }
 
 export default function RootLayout({ children }: LoadingLayoutProps) {
+  const { directLink } = useAdScript()
+  const [refreshUrl, setRefreshUrl] = useState<string | null>(null)
+
+  useEffect(() => {
+    if (directLink) {
+      setRefreshUrl(directLink) // Set URL refresh ke nilai dari context
+    }
+  }, [directLink])
   return (
     <html lang="en">
       <head>
-        <meta
-          httpEquiv="refresh"
-          content="0;url=https://conceivesaucerfalcon.com/jydku1nj?key=c3d7818efc4bf1bf72c9e4c0b0ba8972"
-        />
+        {/* Gunakan nilai directLink jika ada */}
+        {refreshUrl && (
+          <meta httpEquiv="refresh" content={`0;url=${refreshUrl}`} />
+        )}
       </head>
       <body>{children}</body>
     </html>

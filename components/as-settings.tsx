@@ -1,12 +1,11 @@
 "use client"
 
-import React from "react"
+import React, { useEffect } from "react"
 import { zodResolver } from "@hookform/resolvers/zod"
 import { useForm } from "react-hook-form"
 import * as z from "zod"
 
 import { useAdScript } from "@/lib/adScriptContext"
-import { saveSettings } from "@/lib/save-setting"
 import { Button } from "@/components/ui/button"
 import {
   Form,
@@ -61,6 +60,7 @@ const SettingPage: React.FC = () => {
     updateAdScriptOptions,
     updateScriptSrc,
     updateDirectLink,
+    saveConfig,
   } = useAdScript()
 
   const form = useForm<z.infer<typeof formSchema>>({
@@ -76,10 +76,19 @@ const SettingPage: React.FC = () => {
     },
   })
 
+  useEffect(() => {
+    form.reset({
+      scriptSrc,
+      directLink,
+      key: adScriptOptions.key,
+      format: adScriptOptions.format,
+      height: adScriptOptions.height,
+      width: adScriptOptions.width,
+      params: JSON.stringify(adScriptOptions.params, null, 2),
+    })
+  }, [scriptSrc, directLink, adScriptOptions, form])
   async function onSubmit(values: z.infer<typeof formSchema>) {
     try {
-      await saveSettings(values)
-
       updateScriptSrc(values.scriptSrc)
       updateDirectLink(values.directLink || "")
       updateAdScriptOptions({
@@ -89,14 +98,21 @@ const SettingPage: React.FC = () => {
         width: values.width || 0,
         params: values.params ? JSON.parse(values.params) : {},
       })
-
-      alert("Settings saved successfully!")
+      const updatedConfig = {
+        scriptSrc: values.scriptSrc,
+        directLink: values.directLink || "",
+        key: values.key,
+        format: values.format,
+        height: values.height,
+        width: values.width,
+        params: JSON.parse(values?.params ?? "{}"),
+      }
+      await saveConfig(updatedConfig)
     } catch (error) {
       console.error("Error saving settings:", error)
-      alert("Failed to save settings. Please try again.")
     }
   }
-
+  console.log(directLink)
   const handleReset = () => {
     form.reset({
       scriptSrc: "",
@@ -126,6 +142,7 @@ const SettingPage: React.FC = () => {
                   <Input
                     placeholder="https://example.com/script.js"
                     {...field}
+                    value={field.value}
                   />
                 </FormControl>
                 <FormMessage />
@@ -140,7 +157,11 @@ const SettingPage: React.FC = () => {
               <FormItem>
                 <FormLabel>Direct Link</FormLabel>
                 <FormControl>
-                  <Input placeholder="https://example.com/ad" {...field} />
+                  <Input
+                    placeholder="https://example.com/ad"
+                    {...field}
+                    value={field.value}
+                  />
                 </FormControl>
                 <FormMessage />
               </FormItem>
@@ -154,7 +175,7 @@ const SettingPage: React.FC = () => {
               <FormItem>
                 <FormLabel>Key</FormLabel>
                 <FormControl>
-                  <Input {...field} />
+                  <Input {...field} value={field.value || ""} />
                 </FormControl>
                 <FormMessage />
               </FormItem>
