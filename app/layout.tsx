@@ -6,15 +6,15 @@ import { GoogleAnalytics } from "@next/third-parties/google"
 import { GeistSans } from "geist/font/sans"
 import HolyLoader from "holy-loader"
 
+import { AdScriptProvider } from "@/lib/adScriptContext"
 import { cn } from "@/lib/utils"
 import { Toaster } from "@/components/ui/toaster"
+import AdScript from "@/components/ad-scripts"
+import { Proof } from "@/components/proof"
 import { ScrollTop } from "@/components/scroll-top"
 import { SiteFooter } from "@/components/site-footer"
 import { SiteHeader } from "@/components/site-header"
 import { ThemeProvider } from "@/components/theme-provider"
-
-import AdScript from "../components/ad-scripts"
-import { AdScriptProvider } from "../lib/adScriptContext"
 
 export const metadata: Metadata = {
   title: {
@@ -58,6 +58,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
             </div>
           </AdScriptProvider>
           <ScrollTop />
+          <Proof />
         </ThemeProvider>
         <GoogleAnalytics gaId={process.env.GA_ID!} />
         <Toaster />

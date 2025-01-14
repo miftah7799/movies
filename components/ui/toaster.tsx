@@ -1,5 +1,7 @@
 "use client"
 
+import Image from "next/image"
+
 import {
   Toast,
   ToastClose,
@@ -15,15 +17,36 @@ export function Toaster() {
 
   return (
     <ToastProvider>
-      {toasts.map(function ({ id, title, description, action, ...props }) {
+      {toasts.map(function ({
+        id,
+        title,
+        description,
+        action,
+        image,
+        ...props
+      }) {
         return (
           <Toast key={id} {...props}>
-            <div className="grid gap-1">
-              {title && <ToastTitle>{title}</ToastTitle>}
-              {description && (
-                <ToastDescription>{description}</ToastDescription>
+            <div className="flex gap-2">
+              {image && (
+                <div className="relative w-10">
+                  <Image
+                    alt="Toast Image"
+                    className="object-fit rounded-full"
+                    src={image} // Pastikan URL gambar valid
+                    fill={true} // Untuk mengisi kontainer
+                    sizes="48px" // Ukuran responsif
+                  />
+                </div>
               )}
+              <div className="grid gap-1">
+                {title && <ToastTitle>{title}</ToastTitle>}
+                {description && (
+                  <ToastDescription>{description}</ToastDescription>
+                )}
+              </div>
             </div>
+
             {action}
             <ToastClose />
           </Toast>
