@@ -29,7 +29,7 @@ export function Toaster() {
           <Toast key={id} {...props}>
             <div className="flex gap-2">
               {image && (
-                <div className="relative w-10">
+                <div className="relative w-max">
                   <Image
                     alt="Toast Image"
                     className="object-fit rounded-full"
