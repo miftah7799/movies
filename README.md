@@ -72,26 +72,56 @@ This project is licensed under the MIT License. See the [LICENSE](LICENSE) file 
 Cara menambah lp subdomain:
 
 1. buka docker-compose.yml:
-
+   salin kode ini 
 ```bash
-git clone https://github.com/oktay/movies.git
+(sesuaikan-nama):
+    image: roisfaozi/kingbyt:latest
+    container_name: (sesuaikan-nama)
+    ports:
+      - "8081:3000" //ganti ports depan sesuai urutan subdomain sebelumnya. contoh: 8081:3000 jadi 8082:3000
+    environment:
+      - NEXT_PUBLIC_APP_NAME=(sesuaikan-nama) //contoh: Ali
+      - TMDB_KEY=eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI4YTI2NWE3Y2EyOWMyMjA5MDBiMTdiYzQ2YjgwNDkxMSIsIm5iZiI6MTYyMzI1ODIzMy44NDMwMDAyLCJzdWIiOiI2MGMwZjQ3OThlZGE4NzAwNmQ3MzlkNGEiLCJzY29wZXMiOlsiYXBpX3JlYWQiXSwidmVyc2lvbiI6MX0.McIfqANBzYTIh12NdUhWz8FnvyKDBBmcrbyl9itmrao
+      - NEXT_PUBLIC_SCRIPT_SRC=//conceivesaucerfalcon.com/f5a73ef3091d38301304ffb006681213/invoke.js
+      - NEXT_PUBLIC_KEY=f5a73ef3091d38301304ffb006681213
+      - NEXT_PUBLIC_DIRECT_LINK=https://conceivesaucerfalcon.com/jydku1nj?key=c3d7818efc4bf1bf72c9e4c0b0ba8972
+      - NEXT_PUBLIC_FORMAT=iframe
+      - NEXT_PUBLIC_HEIGHT=50
+      - NEXT_PUBLIC_WIDTH=320
+      - NEXT_PUBLIC_PARAMS={}
+      - NEXT_AUTH_USER=lele
+      - NEXT_AUTH_PASSWORD=lele123
+      - AUTH_SECRET=secret
+    networks:
+      - my_network
 ```
 
-2. Install the dependencies:
-
+2. Buka nginx.conf:
+salin kode ini
 ```bash
-cd movies
-npm install
+server {
+        listen 80;
+        server_name (subdomain).kingbyt.com; // sesuaikan nama subdomain yang akan dirubah
+
+        location / {
+            proxy_pass http://(nama):3000; // sesuaikan dengan nama aplikasi yang baru ditambahkan di docker-compose.yml
+            proxy_set_header Host $host;
+            proxy_set_header X-Real-IP $remote_addr;
+            proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+            proxy_set_header X-Forwarded-Proto $scheme;
+        }
+    }
 ```
 
-3. Obtain an API key from [The Movie Database API](https://developers.themoviedb.org/3) and add it to the `.env.local` file:
+3. jalankan kode dibawah:
 
 ```bash
-TMDB_KEY=your-api-key
+docker compose up -d
 ```
-
-4. Start the development server:
+setelah itu cek apakah subdomain sudah berjalan
+4. Jika belum berjalan coba kode ini:
 
 ```bash
-npm run dev
+docker compose up -d --force-recreate
 ```
+setelah itu cek lagi
