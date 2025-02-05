@@ -147,6 +147,21 @@ const people = {
   ],
 }
 
+const configuration = {
+  title: "Configuration",
+  href: "/config",
+  icon: User,
+  description: pages.people.root.description,
+  items: [
+    {
+      title: "Config",
+      href: "/config",
+      icon: HeartIcon,
+      description: pages.people.popular.description,
+    },
+  ],
+}
+
 const trending = {
   title: "Trending",
   icon: TrendingUpIcon,
@@ -175,7 +190,7 @@ const trending = {
 }
 
 export const navigation = {
-  items: [home, movies, tvShows, people, trending] as NavItem[],
+  items: [home, movies, tvShows, people, trending, configuration] as NavItem[],
 }
 
 export const availableParams = [
