@@ -66,3 +66,32 @@ Contributions are welcome! If you have any ideas, suggestions, or bug reports, p
 ## License
 
 This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for more information.
+
+## Tutorial
+
+Cara menambah lp subdomain:
+
+1. buka docker-compose.yml:
+
+```bash
+git clone https://github.com/oktay/movies.git
+```
+
+2. Install the dependencies:
+
+```bash
+cd movies
+npm install
+```
+
+3. Obtain an API key from [The Movie Database API](https://developers.themoviedb.org/3) and add it to the `.env.local` file:
+
+```bash
+TMDB_KEY=your-api-key
+```
+
+4. Start the development server:
+
+```bash
+npm run dev
+```
