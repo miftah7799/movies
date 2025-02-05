@@ -96,6 +96,14 @@ Cara menambah lp subdomain:
       - my_network
 ```
 
+tambahkan juga nama pada kode dibawah
+
+```bash
+depends_on:
+      - ali
+      - (nama baru)
+```
+
 2. Buka nginx.conf:
 salin kode ini
 ```bash
@@ -113,9 +121,10 @@ server {
     }
 ```
 
-3. jalankan kode dibawah:
+3. Masuk ke vps jalankan kode dibawah:
 
 ```bash
+git pull
 docker compose up -d
 ```
 setelah itu cek apakah subdomain sudah berjalan
