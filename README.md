@@ -124,7 +124,7 @@ server {
 3. Masuk ke vps jalankan kode dibawah:
 
 ```bash
-git pull
+cd movies && git pull
 docker compose up -d
 ```
 setelah itu cek apakah subdomain sudah berjalan
