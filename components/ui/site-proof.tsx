@@ -39,7 +39,13 @@ export const SiteProof: React.FC<ProofProps> = ({ combined }) => {
           toast({
             variant: "proof",
             title: `${user} from ${country}`,
-            description: `Now Watching "${randomTitle}" Recently signed up`,
+            description: (
+              <p className="text-sm opacity-90">
+                Now Watching{" "}
+                <span className="font-semibold">&quot;{randomTitle}&quot;</span>{" "}
+                <br /> Recently signed up
+              </p>
+            ),
             image: image,
             action: (
               <Link href={`/loading`} className="relative aspect-square">
@@ -50,12 +56,12 @@ export const SiteProof: React.FC<ProofProps> = ({ combined }) => {
             ),
           })
         }
+        console.log(`${user} from ${country}`)
       } catch (error) {
         console.error("Error fetching data:", error)
       }
     }
 
-    fetchDataAndShowToast()
     const interval = setInterval(fetchDataAndShowToast, 30 * 1000)
 
     return () => clearInterval(interval)

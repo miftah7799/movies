@@ -1,0 +1,75 @@
+version: "3"
+
+services:
+  ali:
+    image: my-next-app
+    container_name: ali
+    ports:
+      - "8081:3000"
+    environment:
+      - NEXT_PUBLIC_APP_NAME=Ali
+      - TMDB_KEY=eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI4YTI2NWE3Y2EyOWMyMjA5MDBiMTdiYzQ2YjgwNDkxMSIsIm5iZiI6MTYyMzI1ODIzMy44NDMwMDAyLCJzdWIiOiI2MGMwZjQ3OThlZGE4NzAwNmQ3MzlkNGEiLCJzY29wZXMiOlsiYXBpX3JlYWQiXSwidmVyc2lvbiI6MX0.McIfqANBzYTIh12NdUhWz8FnvyKDBBmcrbyl9itmrao
+      - NEXT_PUBLIC_SCRIPT_SRC=//conceivesaucerfalcon.com/f5a73ef3091d38301304ffb006681213/invoke.js
+      - NEXT_PUBLIC_KEY=f5a73ef3091d38301304ffb006681213
+      - NEXT_PUBLIC_DIRECT_LINK=https://conceivesaucerfalcon.com/jydku1nj?key=c3d7818efc4bf1bf72c9e4c0b0ba8972
+      - NEXT_PUBLIC_FORMAT=iframe
+      - NEXT_PUBLIC_HEIGHT=50
+      - NEXT_PUBLIC_WIDTH=320
+      - NEXT_PUBLIC_PARAMS={}
+      - NEXT_AUTH_USER=lele
+      - NEXT_AUTH_PASSWORD=lele123
+      - AUTH_SECRET=secret
+
+  alan:
+    image: my-next-app
+    container_name: alan
+    ports:
+      - "8082:3000"
+    environment:
+      - NEXT_PUBLIC_APP_NAME=Alan
+      - TMDB_KEY=eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI4YTI2NWE3Y2EyOWMyMjA5MDBiMTdiYzQ2YjgwNDkxMSIsIm5iZiI6MTYyMzI1ODIzMy44NDMwMDAyLCJzdWIiOiI2MGMwZjQ3OThlZGE4NzAwNmQ3MzlkNGEiLCJzY29wZXMiOlsiYXBpX3JlYWQiXSwidmVyc2lvbiI6MX0.McIfqANBzYTIh12NdUhWz8FnvyKDBBmcrbyl9itmrao
+      - NEXT_PUBLIC_SCRIPT_SRC=//conceivesaucerfalcon.com/f5a73ef3091d38301304ffb006681213/invoke.js
+      - NEXT_PUBLIC_KEY=f5a73ef3091d38301304ffb006681213
+      - NEXT_PUBLIC_DIRECT_LINK=https://conceivesaucerfalcon.com/jydku1nj?key=c3d7818efc4bf1bf72c9e4c0b0ba8972
+      - NEXT_PUBLIC_FORMAT=iframe
+      - NEXT_PUBLIC_HEIGHT=50
+      - NEXT_PUBLIC_WIDTH=320
+      - NEXT_PUBLIC_PARAMS={}
+      - NEXT_AUTH_USER=lele
+      - NEXT_AUTH_PASSWORD=lele123
+      - AUTH_SECRET=secret
+
+  alif:
+    image: my-next-app
+    container_name: alif
+    ports:
+      - "8083:3000"
+    environment:
+      - NEXT_PUBLIC_APP_NAME=Alif
+      - TMDB_KEY=eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI4YTI2NWE3Y2EyOWMyMjA5MDBiMTdiYzQ2YjgwNDkxMSIsIm5iZiI6MTYyMzI1ODIzMy44NDMwMDAyLCJzdWIiOiI2MGMwZjQ3OThlZGE4NzAwNmQ3MzlkNGEiLCJzY29wZXMiOlsiYXBpX3JlYWQiXSwidmVyc2lvbiI6MX0.McIfqANBzYTIh12NdUhWz8FnvyKDBBmcrbyl9itmrao
+      - NEXT_PUBLIC_SCRIPT_SRC=//conceivesaucerfalcon.com/f5a73ef3091d38301304ffb006681213/invoke.js
+      - NEXT_PUBLIC_KEY=f5a73ef3091d38301304ffb006681213
+      - NEXT_PUBLIC_DIRECT_LINK=https://conceivesaucerfalcon.com/jydku1nj?key=c3d7818efc4bf1bf72c9e4c0b0ba8972
+      - NEXT_PUBLIC_FORMAT=iframe
+      - NEXT_PUBLIC_HEIGHT=50
+      - NEXT_PUBLIC_WIDTH=320
+      - NEXT_PUBLIC_PARAMS={}
+      - NEXT_AUTH_USER=lele
+      - NEXT_AUTH_PASSWORD=lele123
+      - AUTH_SECRET=secret
+
+  nginx:
+    image: nginx:alpine
+    container_name: nginx
+    ports:
+      - "80:80"
+    volumes:
+      - ./nginx.conf:/etc/nginx/nginx.conf
+    depends_on:
+      - ali
+      - alif
+      - alan
+networks:
+  my_network:
+    name: my_network
+    driver: bridge
