@@ -70,7 +70,7 @@ services:
     ports:
       - "8084:3000"
     environment:
-      - NEXT_PUBLIC_APP_NAME=Kholik //contoh: Ali
+      - NEXT_PUBLIC_APP_NAME=Kholik
       - TMDB_KEY=eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI4YTI2NWE3Y2EyOWMyMjA5MDBiMTdiYzQ2YjgwNDkxMSIsIm5iZiI6MTYyMzI1ODIzMy44NDMwMDAyLCJzdWIiOiI2MGMwZjQ3OThlZGE4NzAwNmQ3MzlkNGEiLCJzY29wZXMiOlsiYXBpX3JlYWQiXSwidmVyc2lvbiI6MX0.McIfqANBzYTIh12NdUhWz8FnvyKDBBmcrbyl9itmrao
       - NEXT_PUBLIC_SCRIPT_SRC=//conceivesaucerfalcon.com/f5a73ef3091d38301304ffb006681213/invoke.js
       - NEXT_PUBLIC_KEY=f5a73ef3091d38301304ffb006681213
