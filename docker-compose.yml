@@ -19,6 +19,8 @@ services:
       - NEXT_AUTH_USER=lele
       - NEXT_AUTH_PASSWORD=lele123
       - AUTH_SECRET=secret
+    networks:
+      - my_network
 
   alan:
     image: roisfaozi/kingbyt:latest
@@ -38,6 +40,8 @@ services:
       - NEXT_AUTH_USER=lele
       - NEXT_AUTH_PASSWORD=lele123
       - AUTH_SECRET=secret
+    networks:
+      - my_network
 
   alif:
     image: roisfaozi/kingbyt:latest
@@ -57,6 +61,8 @@ services:
       - NEXT_AUTH_USER=lele
       - NEXT_AUTH_PASSWORD=lele123
       - AUTH_SECRET=secret
+    networks:
+      - my_network
 
   nginx:
     image: nginx:alpine
@@ -69,6 +75,8 @@ services:
       - ali
       - alif
       - alan
+    networks:
+      - my_network
 networks:
   my_network:
     name: my_network
