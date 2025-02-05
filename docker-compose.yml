@@ -96,6 +96,7 @@ services:
       - ali
       - alif
       - alan
+      - kholik
     networks:
       - my_network
 networks:
