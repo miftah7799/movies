@@ -88,7 +88,7 @@ services:
     image: roisfaozi/kingbyt:latest
     container_name: wadmi
     ports:
-      - "8083:3000"
+      - "8085:3000"
     environment:
       - NEXT_PUBLIC_APP_NAME=wadmi
       - TMDB_KEY=eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI4YTI2NWE3Y2EyOWMyMjA5MDBiMTdiYzQ2YjgwNDkxMSIsIm5iZiI6MTYyMzI1ODIzMy44NDMwMDAyLCJzdWIiOiI2MGMwZjQ3OThlZGE4NzAwNmQ3MzlkNGEiLCJzY29wZXMiOlsiYXBpX3JlYWQiXSwidmVyc2lvbiI6MX0.McIfqANBzYTIh12NdUhWz8FnvyKDBBmcrbyl9itmrao
