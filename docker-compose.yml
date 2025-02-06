@@ -84,6 +84,7 @@ services:
       - AUTH_SECRET=secret
     networks:
       - my_network
+
   wadmi:
     image: roisfaozi/kingbyt:latest
     container_name: wadmi
