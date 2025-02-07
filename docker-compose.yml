@@ -72,9 +72,9 @@ services:
     environment:
       - NEXT_PUBLIC_APP_NAME=Kholik
       - TMDB_KEY=eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI4YTI2NWE3Y2EyOWMyMjA5MDBiMTdiYzQ2YjgwNDkxMSIsIm5iZiI6MTYyMzI1ODIzMy44NDMwMDAyLCJzdWIiOiI2MGMwZjQ3OThlZGE4NzAwNmQ3MzlkNGEiLCJzY29wZXMiOlsiYXBpX3JlYWQiXSwidmVyc2lvbiI6MX0.McIfqANBzYTIh12NdUhWz8FnvyKDBBmcrbyl9itmrao
-      - NEXT_PUBLIC_SCRIPT_SRC=//conceivesaucerfalcon.com/f5a73ef3091d38301304ffb006681213/invoke.js
-      - NEXT_PUBLIC_KEY=f5a73ef3091d38301304ffb006681213
-      - NEXT_PUBLIC_DIRECT_LINK=https://conceivesaucerfalcon.com/jydku1nj?key=c3d7818efc4bf1bf72c9e4c0b0ba8972
+      - NEXT_PUBLIC_SCRIPT_SRC=//conceivesaucerfalcon.com/d96c063c5cf98f46dfb4164d2e76e259/invoke.js
+      - NEXT_PUBLIC_KEY=d96c063c5cf98f46dfb4164d2e76e259
+      - NEXT_PUBLIC_DIRECT_LINK=https://conceivesaucerfalcon.com/nq7ejrcyg?key=4677eb123351809d4f8c47c7044d4f8d
       - NEXT_PUBLIC_FORMAT=iframe
       - NEXT_PUBLIC_HEIGHT=50
       - NEXT_PUBLIC_WIDTH=320
@@ -93,9 +93,9 @@ services:
     environment:
       - NEXT_PUBLIC_APP_NAME=wadmi
       - TMDB_KEY=eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI4YTI2NWE3Y2EyOWMyMjA5MDBiMTdiYzQ2YjgwNDkxMSIsIm5iZiI6MTYyMzI1ODIzMy44NDMwMDAyLCJzdWIiOiI2MGMwZjQ3OThlZGE4NzAwNmQ3MzlkNGEiLCJzY29wZXMiOlsiYXBpX3JlYWQiXSwidmVyc2lvbiI6MX0.McIfqANBzYTIh12NdUhWz8FnvyKDBBmcrbyl9itmrao
-      - NEXT_PUBLIC_SCRIPT_SRC=//conceivesaucerfalcon.com/f5a73ef3091d38301304ffb006681213/invoke.js
-      - NEXT_PUBLIC_KEY=f5a73ef3091d38301304ffb006681213
-      - NEXT_PUBLIC_DIRECT_LINK=https://conceivesaucerfalcon.com/jydku1nj?key=c3d7818efc4bf1bf72c9e4c0b0ba8972
+      - NEXT_PUBLIC_SCRIPT_SRC=//conceivesaucerfalcon.com/0122ae6253152a8dd1aacf498b7946a2/invoke.js
+      - NEXT_PUBLIC_KEY=0122ae6253152a8dd1aacf498b7946a2
+      - NEXT_PUBLIC_DIRECT_LINK=https://conceivesaucerfalcon.com/j0i3cpww?key=b0fb2f3b50657f6ce933370a3a6f8a6c
       - NEXT_PUBLIC_FORMAT=iframe
       - NEXT_PUBLIC_HEIGHT=50
       - NEXT_PUBLIC_WIDTH=320
@@ -114,9 +114,9 @@ services:
     environment:
       - NEXT_PUBLIC_APP_NAME=rijal
       - TMDB_KEY=eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI4YTI2NWE3Y2EyOWMyMjA5MDBiMTdiYzQ2YjgwNDkxMSIsIm5iZiI6MTYyMzI1ODIzMy44NDMwMDAyLCJzdWIiOiI2MGMwZjQ3OThlZGE4NzAwNmQ3MzlkNGEiLCJzY29wZXMiOlsiYXBpX3JlYWQiXSwidmVyc2lvbiI6MX0.McIfqANBzYTIh12NdUhWz8FnvyKDBBmcrbyl9itmrao
-      - NEXT_PUBLIC_SCRIPT_SRC=//conceivesaucerfalcon.com/f5a73ef3091d38301304ffb006681213/invoke.js
-      - NEXT_PUBLIC_KEY=f5a73ef3091d38301304ffb006681213
-      - NEXT_PUBLIC_DIRECT_LINK=https://conceivesaucerfalcon.com/jydku1nj?key=c3d7818efc4bf1bf72c9e4c0b0ba8972
+      - NEXT_PUBLIC_SCRIPT_SRC=//conceivesaucerfalcon.com/fb29c6efd54800352e61b63f6725d757/invoke.js
+      - NEXT_PUBLIC_KEY=fb29c6efd54800352e61b63f6725d757
+      - NEXT_PUBLIC_DIRECT_LINK=https://conceivesaucerfalcon.com/f4hd4s14?key=4ec0fd34e16c54e6007a9fe6f7c5c906
       - NEXT_PUBLIC_FORMAT=iframe
       - NEXT_PUBLIC_HEIGHT=50
       - NEXT_PUBLIC_WIDTH=320
@@ -135,9 +135,9 @@ services:
     environment:
       - NEXT_PUBLIC_APP_NAME=alwi
       - TMDB_KEY=eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI4YTI2NWE3Y2EyOWMyMjA5MDBiMTdiYzQ2YjgwNDkxMSIsIm5iZiI6MTYyMzI1ODIzMy44NDMwMDAyLCJzdWIiOiI2MGMwZjQ3OThlZGE4NzAwNmQ3MzlkNGEiLCJzY29wZXMiOlsiYXBpX3JlYWQiXSwidmVyc2lvbiI6MX0.McIfqANBzYTIh12NdUhWz8FnvyKDBBmcrbyl9itmrao
-      - NEXT_PUBLIC_SCRIPT_SRC=//conceivesaucerfalcon.com/f5a73ef3091d38301304ffb006681213/invoke.js
-      - NEXT_PUBLIC_KEY=f5a73ef3091d38301304ffb006681213
-      - NEXT_PUBLIC_DIRECT_LINK=https://conceivesaucerfalcon.com/jydku1nj?key=c3d7818efc4bf1bf72c9e4c0b0ba8972
+      - NEXT_PUBLIC_SCRIPT_SRC=//conceivesaucerfalcon.com/0b758e7accf35f6d760b10d1116d1912/invoke.js
+      - NEXT_PUBLIC_KEY=0b758e7accf35f6d760b10d1116d1912
+      - NEXT_PUBLIC_DIRECT_LINK=https://conceivesaucerfalcon.com/agd9bmr7fs?key=1f547f713f3f6e8563025adc98f16e63
       - NEXT_PUBLIC_FORMAT=iframe
       - NEXT_PUBLIC_HEIGHT=50
       - NEXT_PUBLIC_WIDTH=320
@@ -156,9 +156,9 @@ services:
     environment:
       - NEXT_PUBLIC_APP_NAME=jinot
       - TMDB_KEY=eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI4YTI2NWE3Y2EyOWMyMjA5MDBiMTdiYzQ2YjgwNDkxMSIsIm5iZiI6MTYyMzI1ODIzMy44NDMwMDAyLCJzdWIiOiI2MGMwZjQ3OThlZGE4NzAwNmQ3MzlkNGEiLCJzY29wZXMiOlsiYXBpX3JlYWQiXSwidmVyc2lvbiI6MX0.McIfqANBzYTIh12NdUhWz8FnvyKDBBmcrbyl9itmrao
-      - NEXT_PUBLIC_SCRIPT_SRC=//conceivesaucerfalcon.com/f5a73ef3091d38301304ffb006681213/invoke.js
-      - NEXT_PUBLIC_KEY=f5a73ef3091d38301304ffb006681213
-      - NEXT_PUBLIC_DIRECT_LINK=https://conceivesaucerfalcon.com/jydku1nj?key=c3d7818efc4bf1bf72c9e4c0b0ba8972
+      - NEXT_PUBLIC_SCRIPT_SRC=//conceivesaucerfalcon.com/062b797e4e55e3112199354981f57ab3/invoke.js
+      - NEXT_PUBLIC_KEY=062b797e4e55e3112199354981f57ab3
+      - NEXT_PUBLIC_DIRECT_LINK=https://conceivesaucerfalcon.com/zns7bkwfe?key=84298cafa040675704a9334c3bb443e6
       - NEXT_PUBLIC_FORMAT=iframe
       - NEXT_PUBLIC_HEIGHT=50
       - NEXT_PUBLIC_WIDTH=320
