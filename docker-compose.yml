@@ -106,7 +106,7 @@ services:
     networks:
       - my_network
 
-   rijal:
+  rijal:
     image: roisfaozi/kingbyt:latest
     container_name: rijal
     ports:
