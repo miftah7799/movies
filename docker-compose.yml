@@ -51,9 +51,9 @@ services:
     environment:
       - NEXT_PUBLIC_APP_NAME=Alif
       - TMDB_KEY=eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI4YTI2NWE3Y2EyOWMyMjA5MDBiMTdiYzQ2YjgwNDkxMSIsIm5iZiI6MTYyMzI1ODIzMy44NDMwMDAyLCJzdWIiOiI2MGMwZjQ3OThlZGE4NzAwNmQ3MzlkNGEiLCJzY29wZXMiOlsiYXBpX3JlYWQiXSwidmVyc2lvbiI6MX0.McIfqANBzYTIh12NdUhWz8FnvyKDBBmcrbyl9itmrao
-      - NEXT_PUBLIC_SCRIPT_SRC=//conceivesaucerfalcon.com/f5a73ef3091d38301304ffb006681213/invoke.js
-      - NEXT_PUBLIC_KEY=f5a73ef3091d38301304ffb006681213
-      - NEXT_PUBLIC_DIRECT_LINK=https://conceivesaucerfalcon.com/jydku1nj?key=c3d7818efc4bf1bf72c9e4c0b0ba8972
+      - NEXT_PUBLIC_SCRIPT_SRC=//conceivesaucerfalcon.com/139664c7926d900d7ad2c0c5d908bfc4/invoke.js
+      - NEXT_PUBLIC_KEY=139664c7926d900d7ad2c0c5d908bfc4
+      - NEXT_PUBLIC_DIRECT_LINK=https://conceivesaucerfalcon.com/kt6sak6bq?key=601118e88f73c4b99a2d52b4498dc1fb
       - NEXT_PUBLIC_FORMAT=iframe
       - NEXT_PUBLIC_HEIGHT=50
       - NEXT_PUBLIC_WIDTH=320
