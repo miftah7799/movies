@@ -30,9 +30,9 @@ services:
     environment:
       - NEXT_PUBLIC_APP_NAME=Alan
       - TMDB_KEY=eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI4YTI2NWE3Y2EyOWMyMjA5MDBiMTdiYzQ2YjgwNDkxMSIsIm5iZiI6MTYyMzI1ODIzMy44NDMwMDAyLCJzdWIiOiI2MGMwZjQ3OThlZGE4NzAwNmQ3MzlkNGEiLCJzY29wZXMiOlsiYXBpX3JlYWQiXSwidmVyc2lvbiI6MX0.McIfqANBzYTIh12NdUhWz8FnvyKDBBmcrbyl9itmrao
-      - NEXT_PUBLIC_SCRIPT_SRC=//conceivesaucerfalcon.com/f5a73ef3091d38301304ffb006681213/invoke.js
-      - NEXT_PUBLIC_KEY=f5a73ef3091d38301304ffb006681213
-      - NEXT_PUBLIC_DIRECT_LINK=https://conceivesaucerfalcon.com/jydku1nj?key=c3d7818efc4bf1bf72c9e4c0b0ba8972
+      - NEXT_PUBLIC_SCRIPT_SRC=//conceivesaucerfalcon.com/ee9ecd4112c2eea8ce641dde268d55a2/invoke.js
+      - NEXT_PUBLIC_KEY=ee9ecd4112c2eea8ce641dde268d55a2
+      - NEXT_PUBLIC_DIRECT_LINK=https:https://conceivesaucerfalcon.com/h5ykbnmi3g?key=5641a424cf3feeceabb46ed8a72174f5
       - NEXT_PUBLIC_FORMAT=iframe
       - NEXT_PUBLIC_HEIGHT=50
       - NEXT_PUBLIC_WIDTH=320
