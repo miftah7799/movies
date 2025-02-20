@@ -3,6 +3,7 @@ version: "3"
 services:
   ali:
     image: roisfaozi/kingbyt:latest
+    pull_policy: always
     container_name: ali
     ports:
       - "8081:3000"
@@ -19,11 +20,13 @@ services:
       - NEXT_AUTH_USER=lele
       - NEXT_AUTH_PASSWORD=lele123
       - AUTH_SECRET=secret
+      - NEXT_PUBLIC_HISTATS_ID=4910783
     networks:
       - my_network
 
   alan:
     image: roisfaozi/kingbyt:latest
+    pull_policy: always
     container_name: alan
     ports:
       - "8082:3000"
@@ -40,11 +43,13 @@ services:
       - NEXT_AUTH_USER=lele
       - NEXT_AUTH_PASSWORD=lele123
       - AUTH_SECRET=secret
+      - NEXT_PUBLIC_HISTATS_ID=4910783
     networks:
       - my_network
 
   alif:
     image: roisfaozi/kingbyt:latest
+    pull_policy: always
     container_name: alif
     ports:
       - "8083:3000"
@@ -61,6 +66,7 @@ services:
       - NEXT_AUTH_USER=lele
       - NEXT_AUTH_PASSWORD=lele123
       - AUTH_SECRET=secret
+      - NEXT_PUBLIC_HISTATS_ID=4910783
     networks:
       - my_network
 

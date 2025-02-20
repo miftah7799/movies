@@ -10,8 +10,26 @@ let config = {
   params: process.env.NEXT_PUBLIC_PARAMS
     ? JSON.parse(process.env.NEXT_PUBLIC_PARAMS)
     : {},
+  histatId: process.env.NEXT_PUBLIC_HISTATS_ID || "",
 }
 
+/**
+ * Returns the ad configuration as a JSON response.
+ *
+ * @returns An object representing the ad configuration.
+ * @throws If there is an error while retrieving the configuration.
+ * @example
+ * {
+ *   scriptSrc: string,
+ *   key: string,
+ *   directLink: string,
+ *   format: "iframe" | "script",
+ *   height: number,
+ *   width: number,
+ *   params: Record<string, unknown>,
+ *   histatId: string
+ * }
+ */
 export async function GET(request: NextRequest, response: NextResponse) {
   try {
     return NextResponse.json(config)

@@ -10,11 +10,12 @@ import { AdScriptProvider } from "@/lib/adScriptContext"
 import { cn } from "@/lib/utils"
 import { Toaster } from "@/components/ui/toaster"
 import AdScript from "@/components/ad-scripts"
+import Histats from "@/components/histat-counter"
+import { Proof } from "@/components/proof"
 import { ScrollTop } from "@/components/scroll-top"
 import { SiteFooter } from "@/components/site-footer"
 import { SiteHeader } from "@/components/site-header"
 import { ThemeProvider } from "@/components/theme-provider"
-import { Proof } from '@/components/proof'
 
 export const metadata: Metadata = {
   title: {
@@ -52,6 +53,8 @@ export default function RootLayout({ children }: RootLayoutProps) {
             >
               <SiteHeader />
               <div className="relative flex-1 py-4">{children}</div>
+              <Histats />
+
               <AdScript />
 
               <SiteFooter />

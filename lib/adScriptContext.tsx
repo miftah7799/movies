@@ -10,6 +10,7 @@ export interface AdScriptConfig {
   height: number
   width: number
   params: Record<string, unknown>
+  histatId: string
 }
 
 export interface AdScriptOptions {
@@ -18,17 +19,20 @@ export interface AdScriptOptions {
   height: number
   width: number
   params: Record<string, unknown>
+  histatId: string
 }
 
 export interface AdScriptContextType {
   adScriptOptions: AdScriptOptions
   scriptSrc: string
   directLink: string
+  siteId: string
   updateAdScriptOptions: (newOptions: Partial<AdScriptOptions>) => void
   updateScriptSrc: (newSrc: string) => void
   updateDirectLink: (newLink: string) => void
   reloadConfig: () => Promise<void>
   saveConfig: (newConfig: Partial<AdScriptConfig>) => Promise<void>
+  setSiteId: (siteId: string) => void
 }
 
 const defaultAdScriptOptions: AdScriptOptions = {
@@ -37,6 +41,7 @@ const defaultAdScriptOptions: AdScriptOptions = {
   height: 50,
   width: 320,
   params: {},
+  histatId: "4910783",
 }
 
 const AdScriptContext = createContext<AdScriptContextType | undefined>(
@@ -59,6 +64,7 @@ export const AdScriptProvider: React.FC<{ children: React.ReactNode }> = ({
   )
   const [scriptSrc, setScriptSrc] = useState<string>("")
   const [directLink, setDirectLink] = useState<string>("")
+  const [siteId, setSiteId] = useState<string>("")
 
   const reloadConfig = async () => {
     try {
@@ -70,10 +76,12 @@ export const AdScriptProvider: React.FC<{ children: React.ReactNode }> = ({
         height: data.height,
         width: data.width,
         params: data.params,
+        histatId: data.histatId,
       })
       setScriptSrc(data.scriptSrc)
       setDirectLink(data.directLink)
-      console.log("Config succesfully loaded")
+      setSiteId(data.histatId)
+      console.log("Config succesfully loaded", data.histatId)
     } catch (error) {
       console.error("Failed to load ad config:", error)
     }
@@ -123,6 +131,8 @@ export const AdScriptProvider: React.FC<{ children: React.ReactNode }> = ({
         updateDirectLink,
         reloadConfig,
         saveConfig,
+        siteId,
+        setSiteId,
       }}
     >
       {children}

@@ -50,6 +50,12 @@ const formSchema = z.object({
       { message: "Invalid JSON for params" }
     )
     .optional(),
+  histatId: z
+    .string()
+    .refine((value) => !value || !isNaN(Number(value)), {
+      message: "Histat ID must be a numeric string",
+    })
+    .optional(),
 })
 
 const SettingPage: React.FC = () => {
@@ -73,6 +79,7 @@ const SettingPage: React.FC = () => {
       height: adScriptOptions.height,
       width: adScriptOptions.width,
       params: JSON.stringify(adScriptOptions.params, null, 2),
+      histatId: adScriptOptions.histatId || "",
     },
   })
 
@@ -85,6 +92,7 @@ const SettingPage: React.FC = () => {
       height: adScriptOptions.height,
       width: adScriptOptions.width,
       params: JSON.stringify(adScriptOptions.params, null, 2),
+      histatId: adScriptOptions.histatId || "",
     })
   }, [scriptSrc, directLink, adScriptOptions, form])
   async function onSubmit(values: z.infer<typeof formSchema>) {
@@ -97,6 +105,7 @@ const SettingPage: React.FC = () => {
         height: values.height || 0,
         width: values.width || 0,
         params: values.params ? JSON.parse(values.params) : {},
+        histatId: values.histatId || "",
       })
       const updatedConfig = {
         scriptSrc: values.scriptSrc,
@@ -106,6 +115,7 @@ const SettingPage: React.FC = () => {
         height: values.height,
         width: values.width,
         params: JSON.parse(values?.params ?? "{}"),
+        histatId: values.histatId || "",
       }
       await saveConfig(updatedConfig)
     } catch (error) {
@@ -122,6 +132,7 @@ const SettingPage: React.FC = () => {
       height: 50,
       width: 320,
       params: "{}",
+      histatId: "",
     })
     localStorage.removeItem("adScriptSettings")
   }
@@ -240,6 +251,20 @@ const SettingPage: React.FC = () => {
                 <FormLabel>Params (JSON)</FormLabel>
                 <FormControl>
                   <Textarea {...field} />
+                </FormControl>
+                <FormMessage />
+              </FormItem>
+            )}
+          />
+
+          <FormField
+            control={form.control}
+            name="histatId"
+            render={({ field }) => (
+              <FormItem>
+                <FormLabel>Histat ID (optional)</FormLabel>
+                <FormControl>
+                  <Input {...field} />
                 </FormControl>
                 <FormMessage />
               </FormItem>
