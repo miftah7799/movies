@@ -20,7 +20,7 @@ services:
       - NEXT_AUTH_USER=lele
       - NEXT_AUTH_PASSWORD=lele123
       - AUTH_SECRET=secret
-      - NEXT_PUBLIC_HISTATS_ID=4910783
+      - NEXT_PUBLIC_HISTATS_ID=4928536
     networks:
       - my_network
 
